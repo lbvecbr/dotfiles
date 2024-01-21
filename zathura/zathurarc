@@ -64,5 +64,6 @@ set render-loading-fg           "#ebdbb2" # fg
 set recolor                     "true"
 set recolor-keephue             "true"    # keep original color
 set recolor-lightcolor          "#d5c4a1" # bg
-set recolor-darkcolor           "#282828" # fg
+set recolor-darkcolor           "#151515" # fg
 
+set selection-clipboard clipboard

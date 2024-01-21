@@ -16,6 +16,7 @@ require("lazy").setup({
 	{"hrsh7th/cmp-path"},
 	{"hrsh7th/cmp-cmdline"},
 	{"hrsh7th/nvim-cmp"},
+	{"IlyasYOY/obs.nvim"},
 	{"ellisonleao/gruvbox.nvim", priority = 1000 , config = true, opts = ...},
 	{"williamboman/mason.nvim", build = ":MasonUpdate"},
 	{"folke/neodev.nvim", opts = {} },
