@@ -15,5 +15,4 @@ require('plugins.lsp')
 require('plugins.mason')
 require('plugins.neodev')
 require('plugins.neotree')
-require('plugins.obsidian')
 

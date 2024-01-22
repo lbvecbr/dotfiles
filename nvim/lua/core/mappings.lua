@@ -2,29 +2,22 @@ require('core.aliases_map')
 
 vim.g.mapleader = ' '
 
-imap('jk', '<esc>:w<cr>')
+imap('jk', '<esc>')
+imap('<Leader>f', '<C-x><C-f>')
+imap('jj', '<C-o>A')
+
 vmap('<Leader> ', '<esc>')
+
 nmap('<Leader> ', ':nohl<cr>')
 nmap('<Leader>so', ':so %<cr>')
 nmap('<Leader>w', ':w<cr>')
-nmap(',cg', ':colorscheme gruvbox<cr>')
-nmap(',ch', ':colorscheme habamax<cr>')
-imap('jj', '<C-o>A')
-nmap(',ve', ':vs<cr>:E<cr>')
+nmap('<Leader>me', ':e ~/.config/nvim/lua/core/mappings.lua<cr>')
 nmap('<Leader>e', ':NeoTreeFloat<cr>')
-nmap('<Leader>cg', ':[[lua SetColor("gruvbox")<cr>]]')
+nmap('<Leader>ee', ':NeoTreeShowToggle<cr>')
+nmap('<Leader>h', '<C-w><C-w>')
+nmap('<Leader>m', ':bn<cr>')
+nmap('<Leader>n', ':bp<cr>')
 
-
-local function RelativeNumberToggle()
-  if vim.wo.relativenumber == true
-      then vim.wo.relativenumber = false
-  elseif vim.wo.relativenumber == false
-      then vim.wo.relativenumber = true
-  end
-end
-
-
-nmap('<Leader>n', ':lua RelativeNumberToggle()<cr>')
 
 local function Trimslashes()
   vim.cmd([[
