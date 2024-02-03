@@ -20,6 +20,11 @@ require("lazy").setup({
 	{"ellisonleao/gruvbox.nvim", priority = 1000 , config = true, opts = ...},
 	{"williamboman/mason.nvim", build = ":MasonUpdate"},
 	{"folke/neodev.nvim", opts = {} },
+    {'akinsho/toggleterm.nvim', version = "*", config = true},
+    {'windwp/nvim-autopairs'},
+    {'windwp/nvim-ts-autotag'},
+    {'nvim-telescope/telescope.nvim',tag = '0.1.5',dependencies = {'nvim-lua/plenary.nvim'}},
+    {"akinsho/bufferline.nvim", dependencies = {'nvim-tree/nvim-web-devicons'}},
 	{"nvim-neo-tree/neo-tree.nvim",
         branch = "v2.x",
         dependencies = {
