@@ -2,6 +2,7 @@
 " remap leader key
 let mapleader=" "
 :verbose inoremap <Tab>
+nnoremap <leader>h <C-w><C-w>
 " j/k will move virtual lines (lines that wrap)
 noremap <silent> <expr> j (v:count == 0 ? 'gj' : 'j')
 noremap <silent> <expr> k (v:count == 0 ? 'gk' : 'k')
@@ -26,26 +27,28 @@ vmap <C-x> d<Esc>i
 map <C-v> pi
 imap <C-v> <Esc>pi
 imap <C-z> <Esc>ui
+"visual escape
+vnoremap jk <Esc> 
 " buffer navigation
 nnoremap <TAB> :bn<cr>
 nnoremap <S-TAB> :bp<cr>
-nnoremap <c-w> :bp \|bd #<cr>
+nnoremap <leader>x :bp \|bd #<cr>
+nnoremap L <cmd>BufferLineCycleNext<cr>
+nnoremap J <cmd>BufferLineCyclePrev<cr>
+nnoremap <leader>b <cmd>BufferLinePick<cr>
 " reload vim
 nnoremap <c-u> :w<cr>:%so<cr>
-vnoremap <c-u> :w<cr>:%so<cr>
-inoremap <c-u> :w<cr>:%so<cr>
+
+inoremap jj <C-o>a
+inoremap hh <C-o>A
 
 " Todo comments -------------------------------------------------------------
 nnoremap <leader>td <cmd>TodoTrouble<cr>
 
 
 " NvimTree
-nnoremap <C-n> <cmd>NvimTreeToggle<cr>
-vnoremap <C-n> <cmd>NvimTreeToggle<cr>
-inoremap <C-n> <cmd>NvimTreeToggle<cr>
-nnoremap <leader>ntf <cmd>NvimTreeFindFile<cr>
-vnoremap <leader>ntf <cmd>NvimTreeFineFile<cr>
-inoremap <leader>ntf <cmd>NvimTreeFindFile<cr>
+nnoremap <leader>e <cmd>NvimTreeToggle<cr>
+nnoremap <leader>ee <cmd>NvimTreeToggle ~/<cr>
 
 
 " Telescope -----------------------------------------------------------------
@@ -146,3 +149,4 @@ nnoremap <silent> [d :Lspsaga diagnostic_jump_next<CR>
 nnoremap <silent> ]d :Lspsaga diagnostic_jump_prev<CR>
 
 nnoremap <silent> <A-d> <cmd>Lspsaga open_floaterm<CR>
+

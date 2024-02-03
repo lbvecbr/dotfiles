@@ -28,13 +28,13 @@ call plug#begin('~/.vim/plugged')
 "Plug 'm00qek/baleia.nvim', { 'tag': 'v1.2.0' }
 "Plug 'samodostal/image.nvim'
 
-"Plug 'akinsho/bufferline.nvim'
+Plug 'akinsho/bufferline.nvim'
 "Plug 'Yggdroot/indentLine'
-"Plug 'nvim-lualine/lualine.nvim'
+Plug 'nvim-lualine/lualine.nvim'
 "Plug 'christoomey/vim-tmux-navigator'
 
-"Plug 'kyazdani42/nvim-web-devicons'
-"Plug 'kyazdani42/nvim-tree.lua'
+Plug 'kyazdani42/nvim-web-devicons'
+Plug 'kyazdani42/nvim-tree.lua'
 
 Plug 'max397574/better-escape.nvim'
 "Plug 'terrortylor/nvim-comment'

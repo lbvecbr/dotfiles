@@ -11,9 +11,11 @@ set scrolloff=10 " offset for scroll
 set nospell " disable orphografic checker
 set nowrap " disable row wrap
 
+set timeoutlen=350
+
 " tab settings
-set tabstop=2
-set shiftwidth=2
+set tabstop=4
+set shiftwidth=4
 set smartindent
 set expandtab
 set cindent " auto indent
@@ -29,7 +31,7 @@ set splitright
 
 set termguicolors " for colorschemas
 set cc=80 " colorcolumn
-set cmdheight=2
+set cmdheight=1
 set updatetime=100
 set shortmess+=c " buffer changing
 set signcolumn=yes " display column signs
