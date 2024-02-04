@@ -47,7 +47,8 @@ set completeopt=menu,menuone,noselect,preview " complete options
 " colorscheme dracula 
 " colorscheme gruvbox
 " colorscheme neodark
-colorscheme tokyodark
+"colorscheme tokyodark
+colorscheme habamax
 runtime ./plugins/configs/onedark.vim  " setup for colorscheme
 " colorscheme onedark
 
