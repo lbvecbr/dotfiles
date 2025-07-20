@@ -39,6 +39,9 @@ Plug 'tpope/vim-commentary'
 "Терминал
 Plug 'akinsho/toggleterm.nvim'
 
+"C#
+Plug 'OmniSharp/omnisharp-vim'
+
 call plug#end()
 
 " === Основные настройки ===
@@ -73,10 +76,24 @@ local lspconfig = require('lspconfig')
 local cmp = require('cmp')
 
 -- Настройка pyright
-lspconfig.pyright.setup{}
+--lspconfig.pyright.setup{}
+
+-- Настройка OmniSharp
+lspconfig.omnisharp.setup{
+  cmd = { "OmniSharp", "--languageserver", "--hostPID", tostring(vim.fn.getpid()) },
+  root_dir = lspconfig.util.root_pattern("*.sln", "*.csproj", ".git"),
+  msbuild_path = "/usr/lib/dotnet/sdk/9.0.103/MSBuild.dll",
+  env = {
+      MSBuildSDKsPath = "/usr/lib/dotnet/sdk/9.0.103/Sdks/",
+  },
+  on_attach = function(client, bufnr)
+    client.server_capabilities.semanticTokensProvider = nil
+  end,
+  capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities())
+}
 
 -- Настройка автодополнения
-cmp.setup({
+--[[cmp.setup({
   snippet = {
     expand = function(args)
       require('luasnip').lsp_expand(args.body)
@@ -88,6 +105,7 @@ cmp.setup({
     ['<Tab>'] = cmp.mapping.confirm({ select = true }),  -- Подтверждение выбора
     ['<CR>'] = cmp.mapping.confirm({ select = false }),  -- Выбор по Enter
     ['<C-Space>'] = cmp.mapping.complete(),  -- Вызов автодополнения вручную
+    ['<C-n>'] = cmp.mapping.complete(),
   }),
   sources = cmp.config.sources({
     { name = 'nvim_lsp' },
@@ -97,7 +115,7 @@ cmp.setup({
   -- completion = {
   --   autocomplete = false,  -- Отключение автоматического появления меню автодополнения
   -- },
-})
+})]]
 EOF
 
 " === Настройки Treesitter ===
